@@ -1,0 +1,22 @@
+service: construction-logistics-service
+
+plugins:
+ - serverless-plugin-typescript
+ - serverless-plugin-optimize
+ - serverless-offline
+
+provider:
+ name: aws
+ runtime: nodejs14.x
+
+functions:
+ ConstructionLogisticsService: # The name of the lambda function
+   # The module 'handler' is exported in the file 'src/lambda'
+   handler: dist/serverless.handler
+   events:
+     - http:
+         method: ANY
+         path: /
+     - http:
+         method: ANY
+         path: '{proxy+}'

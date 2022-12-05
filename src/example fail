@@ -1,0 +1,52 @@
+{
+    "responsibleId": 3,
+    "responsible": "jcifuentes",
+    "clientId": 101,
+    "clientName": "JAIME CIFUENTES",
+    "projectId": 425,
+    "projectName": "PARQUE HEREDIA",
+    "projectAddress": "Calle 42 # 50-22",
+    "projectEmails": "jcifuentes@email.com",
+    "confirmationNumber": "",
+    "userName": "jcifuentes",
+    "detail": [{
+        "name": "Cocina C12",
+        "reference": "C12",
+        "description": "cocina tipo 8",
+        "group": "muebles hogar",
+        "supplyValue": "650000",
+        "installValue": "120000",
+        "constructionId": "425",
+        "sets": [{
+            "name": "gaveta 1",
+            "reference": "G1",
+            "description": "gaveta de cocina",
+            "tags": ["Cocina", "hogar", "casa", "apartamento"],
+            "sets": [{
+                "name": "gaveta 2",
+                "reference": "G2",
+                "description": "gaveta de para cubiertos",
+                "tags": ["Cocina", "hogar", "casa", "apartamento"],
+                "sets": [],
+                "pieces": ["T15", "T16", "T17", "T18"]
+            }],
+            "pieces": ["T12", "T13", "T13", "T14"]
+        }],
+
+        "pieces": [{
+            "name": "Riel extension gaveta 2",
+            "reference": "RG2",
+            "dimensions": {
+                "height": 5,
+                "width": 5,
+                "depth": 5,
+                "area": 25
+            },
+            "type": "component",
+            "tags": "GAVETA, GAVETA COCINA",
+            "propertiesString": []
+
+        }]
+    }]
+
+}
