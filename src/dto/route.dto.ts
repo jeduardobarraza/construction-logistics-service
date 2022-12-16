@@ -21,6 +21,10 @@ export class RouteDto {
 
   @IsString()
   @IsNotEmpty()
+  projectId: string;
+
+  @IsString()
+  @IsNotEmpty()
   projectName: string;
 
   @IsDateString()
@@ -30,6 +34,6 @@ export class RouteDto {
   @IsArray()
   @IsNotEmpty()
   @Type(() => LocationDto)
-  locations: LocationDto[];
+  detail: LocationDto[];
 
 }

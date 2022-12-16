@@ -11,13 +11,16 @@ export class Route extends Document {
   routeNumber: string;
 
   @Prop({ required: true })
+  projectId: string;
+
+  @Prop({ required: true })
   projectName: string;
 
   @Prop({ required: true})
   routeDate: Date;
 
   @Prop({ required: true })
-  locations: LocationDto[];
+  detail: LocationDto[];
 
 }
 
