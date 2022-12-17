@@ -12,7 +12,7 @@ import {
 import { RouteService } from 'src/services/route.service';
 import { RouteDto } from 'src/dto/route.dto';
 
-@Controller('Route')
+@Controller('project/:projectId/Route')
 export class RouteController {
   constructor(private readonly routeService: RouteService) {}
 
@@ -23,8 +23,8 @@ export class RouteController {
 
   @Post('')
   @HttpCode(HttpStatus.OK)
-  async create(@Body() request: RouteDto): Promise<any> {
-    return await this.routeService.create(request);
+  async create(@Param('projectId') projectId: string,@Body() request: RouteDto): Promise<any> {
+    return await this.routeService.create(projectId,request);
   }
 
   @Get('')
@@ -54,9 +54,5 @@ export class RouteController {
     return await this.routeService.delete(routeId);
   }
 
-  // @Get('/:routeId/pieces')
-  // @HttpCode(HttpStatus.OK)
-  // async getPiecesFromRoute(@Param('routeId') routeId: string): Promise<any> {
-  //   return await this.routeService.getPiecesFromRoute(routeId);
-  // }
+
 }

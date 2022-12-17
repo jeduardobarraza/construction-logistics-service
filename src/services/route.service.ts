@@ -19,11 +19,12 @@ export class RouteService {
     return '*********Route Service Works*************';
   }
 
-  async create(route: RouteDto) {
+  async create(paramProjectId: string,route: RouteDto) {
     try {
       const routeDocument = {
         ...route,
         routeId: util.getShortId(),
+        projectId:paramProjectId,
       };
       return await new this.routeModel(routeDocument).save();
     } catch (error) {
