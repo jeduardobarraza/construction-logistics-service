@@ -42,3 +42,8 @@ export const projectLocationMessages = {
   duplicate: 'Ya existe un registro logistica de obra con esta referencia. Favor Validar.',
   saveError: 'Ha ocurrido un error al momento de guardar el registro de logistica de obra.',
 }
+
+export const contractorMessages = {
+  duplicate: 'Ya existe un contratista con esta referencia. Favor Validar.',
+  saveError: 'Ha ocurrido un error al momento de guardar el contratista.',
+}

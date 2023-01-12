@@ -10,6 +10,7 @@ import { SaleUnitController } from './controllers/saleUnit.controller';
 import { OrderController } from './controllers/Order.controller';
 import { RouteController } from './controllers/Route.controller';
 import { ProjectLocationController } from './controllers/projectLocation.controller';
+import { ContractorController } from './controllers/contractor.controller';
 
 import { Project, ProjectSchema } from './entities/project.entity';
 import { Piece, PieceSchema } from './entities/piece.entity';
@@ -18,6 +19,7 @@ import { SaleUnit, SaleUnitSchema } from './entities/saleUnit.entity';
 import { Order, OrderSchema } from './entities/order.entity';
 import { Route, RouteSchema } from './entities/route.entity';
 import { ProjectLocation, ProjectLocationSchema } from './entities/projectLocation.entity';
+import { Contractor, ContractorSchema } from './entities/contractor.entity';
 
 import dbConfig from './modules/db-config';
 import { PersistenceModule } from './modules/persistence.module';
@@ -30,6 +32,7 @@ import { SaleUnitService } from './services/saleUnit.service';
 import { OrderService } from './services/order.service';
 import { RouteService } from './services/route.service';
 import { ProjectLocationService } from './services/projectLocation.service';
+import { ContractorService } from './services/contractor.service';
 
 @Module({
   imports: [
@@ -46,6 +49,7 @@ import { ProjectLocationService } from './services/projectLocation.service';
       { name: Order.name, schema: OrderSchema },
       { name: Route.name, schema: RouteSchema},
       { name: ProjectLocation.name, schema: ProjectLocationSchema},
+      { name: Contractor.name, schema: ContractorSchema},
     ]),
     PersistenceModule,
   ],
@@ -58,6 +62,7 @@ import { ProjectLocationService } from './services/projectLocation.service';
     OrderController,
     RouteController,
     ProjectLocationController,
+    ContractorController,
   ],
   providers: [
     AppService,
@@ -68,6 +73,7 @@ import { ProjectLocationService } from './services/projectLocation.service';
     OrderService,
     RouteService,
     ProjectLocationService,
+    ContractorService,
   ],
 })
 export class AppModule {}
