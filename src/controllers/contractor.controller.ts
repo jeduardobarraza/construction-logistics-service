@@ -40,18 +40,18 @@ export class ContractorController {
     return await this.contractorService.getContractorById(contractorId);
   }
 
-  @Put('/:contractorId')
-  @HttpCode(HttpStatus.OK)
-  async update(
-    @Param('contractorId') contractorId: string,
-    @Body() request: ContractorDto,
-  ): Promise<any> {
-    return await this.contractorService.update(contractorId, request);
-  }
+  // @Put('/:contractorId')
+  // @HttpCode(HttpStatus.OK)
+  // async update(
+  //   @Param('contractorId') contractorId: string,
+  //   @Body() request: ContractorDto,
+  // ): Promise<any> {
+  //   return await this.contractorService.update(contractorId, request);
+  // }
 
-  @Delete('/:contractorId')
-  @HttpCode(HttpStatus.OK)
-  async delete(@Param('contractorId') contractorId: string): Promise<any> {
-    return await this.contractorService.delete(contractorId);
-  }
+  // @Delete('/:contractorId')
+  // @HttpCode(HttpStatus.OK)
+  // async delete(@Param('contractorId') contractorId: string): Promise<any> {
+  //   return await this.contractorService.delete(contractorId);
+  // }
 }
