@@ -38,8 +38,8 @@ export class ProjectDto {
   @IsNotEmpty()
   tlProjectEmails: string;
 
-  @IsString()
-  tlConfirmationNumber: string;
+  @IsArray()
+  tlConfirmationNumber: string[];
 
   @IsString()
   tlProjectId: string;

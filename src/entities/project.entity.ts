@@ -29,7 +29,7 @@ export class Project extends Document {
   tlProjectEmails: string;
 
   @Prop({ required: true })
-  tlConfirmationNumber: string;
+  tlConfirmationNumber: string[];
 
   @Prop({ required: true })
   tlProjectId: string;
