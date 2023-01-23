@@ -65,4 +65,10 @@ export class ProjectController {
   async getQuantityOfSaleUnitFromProject(@Param('projectId') projectId: string, @Param('saleUnitName') saleUnitName: string): Promise<any> {
     return await this.projectService.getQuantityOfSaleUnitFromProject(projectId, saleUnitName);
   }
+
+  @Get('/validateSet/:setId')
+  @HttpCode(HttpStatus.OK)
+  async validateSetInUse(@Param('setId') setId:string):Promise<any>{
+    return await this.projectService.validateSetInUse(setId);
+  }
 }

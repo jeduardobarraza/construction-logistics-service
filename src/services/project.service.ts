@@ -8,7 +8,9 @@ import { TEXT_TO_VALIDATE_MONGO_DUPLICATES } from 'src/utils/constants';
 import { projectMessages, generalMessages } from 'src/utils/friendlyMessage';
 import { util } from 'src/utils/util';
 import { SaleUnitService } from './saleUnit.service';
+import { get, split, set, cloneDeep, cloneWith } from 'lodash';
 import { SaleUnit } from '../entities/saleUnit.entity';
+import { SetService } from './set.service';
 
 @Injectable()
 export class ProjectService {
@@ -16,7 +18,9 @@ export class ProjectService {
   constructor(
     @InjectModel(Project.name)
     private projectModel: Model<Project>,
-    private saleUnitService: SaleUnitService
+    private saleUnitService: SaleUnitService,
+    private setService: SetService
+
   ) {}
 
   ping() {
@@ -204,6 +208,26 @@ export class ProjectService {
     }
   }
 
+  async validateSetInUse(setId:string){
+    const savedProjects = await this.getProjects();
+    let message: Boolean=false;
+    if(savedProjects.length>0){
+    for(let i=0; i<savedProjects.length;i++){
+      for(let j=0;j<savedProjects[i].detail.length;j++){
+        let clonedSaleUnits = cloneDeep(savedProjects[i].detail[j]);
+        if(clonedSaleUnits){
+          for(let i=0;i<clonedSaleUnits.sets.length;i++){
+            if(clonedSaleUnits.sets[i].setId==setId){
+              console.log('set>>>>>>>',clonedSaleUnits.sets[i]);
+              message= true;
+            }
+          }
+        }
+      }
+    }
+    }
+    return message;
+  }
   // groupingByPieceReference = (piecesArray) => {
   //   let groupedPieces:any[]=[];
   //   let piecesArrayList:any[]=piecesArray;
