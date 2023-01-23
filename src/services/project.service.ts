@@ -220,6 +220,39 @@ export class ProjectService {
             if(clonedSaleUnits.sets[i].setId==setId){
               console.log('set>>>>>>>',clonedSaleUnits.sets[i]);
               message= true;
+              return message;
+            }
+          }
+        }
+      }
+    }
+    }
+    return message;
+  }
+
+  async validatePieceInUse(pieceId:string){
+    const savedProjects = await this.getProjects();
+    let message: Boolean=false;
+    if(savedProjects.length>0){
+    for(let i=0; i<savedProjects.length;i++){
+      for(let j=0;j<savedProjects[i].detail.length;j++){
+        let clonedSaleUnits = cloneDeep(savedProjects[i].detail[j]);
+        if(clonedSaleUnits){
+        //console.log('clonedSaleUnits>>>>>>>>>>',clonedSaleUnits);
+          for(let i=0;i<clonedSaleUnits.pieces.length;i++){
+            if(clonedSaleUnits.pieces[i].pieceId==pieceId){
+              console.log('piece first level>>>>>>>',clonedSaleUnits.sets[i]);
+              message= true;
+              return message;
+            }
+          }
+          for(let i=0;i<clonedSaleUnits.sets.length;i++){
+            for(let j=0;j<clonedSaleUnits.sets[i].pieces.length;j++){
+              if(clonedSaleUnits.sets[i].pieces[j].pieceId==pieceId){
+                console.log('piece second level>>>>>>>',clonedSaleUnits.sets[i].pieces[j]);
+                message= true;
+                return message;
+              }
             }
           }
         }

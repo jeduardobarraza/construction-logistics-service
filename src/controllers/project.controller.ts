@@ -71,4 +71,10 @@ export class ProjectController {
   async validateSetInUse(@Param('setId') setId:string):Promise<any>{
     return await this.projectService.validateSetInUse(setId);
   }
+
+  @Get('/validatePiece/:pieceId')
+  @HttpCode(HttpStatus.OK)
+  async validatePieceInUse(@Param('pieceId') pieceId:string):Promise<any>{
+    return await this.projectService.validatePieceInUse(pieceId);
+  }
 }
