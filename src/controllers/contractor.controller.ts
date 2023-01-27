@@ -22,36 +22,36 @@ export class ContractorController {
     return this.contractorService.ping();
   }
 
-  // @Post('')
-  // @HttpCode(HttpStatus.OK)
-  // async create(@Body() request: ContractorDto): Promise<any> {
-  //   return await this.contractorService.create(request);
-  // }
+  @Post('')
+  @HttpCode(HttpStatus.OK)
+  async create(@Body() request: ContractorDto): Promise<any> {
+    return await this.contractorService.create(request);
+  }
 
-  // @Get('')
-  // @HttpCode(HttpStatus.OK)
-  // async getContractors(@Query() query): Promise<any> {
-  //   return await this.contractorService.getContractors(query?.type);
-  // }
+  @Get('')
+  @HttpCode(HttpStatus.OK)
+  async getContractors(@Query() query): Promise<any> {
+    return await this.contractorService.getContractors(query?.type);
+  }
 
-  // @Get('/:contractorId')
-  // @HttpCode(HttpStatus.OK)
-  // async getContractorById(@Param('contractorId') contractorId: string): Promise<any> {
-  //   return await this.contractorService.getContractorById(contractorId);
-  // }
+  @Get('/:contractorId')
+  @HttpCode(HttpStatus.OK)
+  async getContractorById(@Param('contractorId') contractorId: string): Promise<any> {
+    return await this.contractorService.getContractorById(contractorId);
+  }
 
-  // @Put('/:contractorId')
-  // @HttpCode(HttpStatus.OK)
-  // async update(
-  //   @Param('contractorId') contractorId: string,
-  //   @Body() request: ContractorDto,
-  // ): Promise<any> {
-  //   return await this.contractorService.update(contractorId, request);
-  // }
+  @Put('/:contractorId')
+  @HttpCode(HttpStatus.OK)
+  async update(
+    @Param('contractorId') contractorId: string,
+    @Body() request: ContractorDto,
+  ): Promise<any> {
+    return await this.contractorService.update(contractorId, request);
+  }
 
-  // @Delete('/:contractorId')
-  // @HttpCode(HttpStatus.OK)
-  // async delete(@Param('contractorId') contractorId: string): Promise<any> {
-  //   return await this.contractorService.delete(contractorId);
-  // }
+  @Delete('/:contractorId')
+  @HttpCode(HttpStatus.OK)
+  async delete(@Param('contractorId') contractorId: string): Promise<any> {
+    return await this.contractorService.delete(contractorId);
+  }
 }

@@ -1,7 +1,6 @@
 import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
 import { Document } from 'mongoose';
-import { DimensionDto } from 'src/dto/dimension.dto';
-import { PropertyDto } from '../dto/property.dto';
+
 
 @Schema({ timestamps: true })
 export class Contractor extends Document {
@@ -27,7 +26,7 @@ export class Contractor extends Document {
   team: string[];
 
   @Prop({ required: true})
-  Area: string;
+  area: string;
 }
 
 export const ContractorSchema = SchemaFactory.createForClass(Contractor);
