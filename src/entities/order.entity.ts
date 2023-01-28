@@ -7,17 +7,17 @@ export class Order extends Document {
   @Prop({ required: true, unique: true, index: true })
   orderId: string;
 
-  @Prop({ required: true})
+  @Prop({ required: true, unique: true, index: true})
   orderNumber: string;
 
-  @Prop({ required: true, unique: true, index: true })
-  confNumber: string;
+  @Prop({ required: true })
+  confNumber: string[];
 
   @Prop({ required: true })
   orderDate: Date;
 
   @Prop({ required: true })
-  product: string;
+  product: string[];
 
   @Prop({ required: true })
   projectId: string;

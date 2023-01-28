@@ -16,17 +16,17 @@ export class OrderDto {
   @IsNotEmpty()
   orderNumber: string;
 
-  @IsString()
+  @IsArray()
   @IsNotEmpty()
-  confNumber: string;
+  confNumber: string[];
 
   @IsDateString()
   @IsNotEmpty()
   orderDate: Date;
 
-  @IsString()
+  @IsArray()
   @IsNotEmpty()
-  product: string;
+  product: string[];
 
   // @IsString()
   // @IsNotEmpty()
