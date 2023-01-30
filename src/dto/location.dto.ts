@@ -17,6 +17,9 @@ export class LocationDto {
   @IsNotEmpty()
   location: string;
 
+  @IsString()
+  contractorId: string;
+
   @IsArray()
   @IsNotEmpty()
   @Type(() => SaleUnitLocationDto)
