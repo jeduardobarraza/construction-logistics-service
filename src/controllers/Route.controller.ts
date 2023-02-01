@@ -29,8 +29,8 @@ export class RouteController {
 
   @Get('')
   @HttpCode(HttpStatus.OK)
-  async getOrders(): Promise<any> {
-    return await this.routeService.getRoutes();
+  async getOrders(@Param('projectId') projectId: string,): Promise<any> {
+    return await this.routeService.getRouteByProjectId(projectId);
   }
 
   @Get('/:routeId')

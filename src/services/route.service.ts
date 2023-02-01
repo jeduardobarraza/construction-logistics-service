@@ -72,4 +72,15 @@ export class RouteService {
     return this.routeModel.findByIdAndRemove(savedRoute._id);
   }
 
+  async getRouteByProjectId(projectId:string){
+    const routes=await this.getRoutes()
+    let routesByProject:any[]=[];
+    for (let i=0; i<routes.length;i++){
+      if(routes[i].projectId==projectId){
+        routesByProject.push(routes[i])
+      }
+    }
+    return routesByProject;
+  }
+
 }
