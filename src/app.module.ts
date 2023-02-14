@@ -11,6 +11,7 @@ import { OrderController } from './controllers/Order.controller';
 import { RouteController } from './controllers/Route.controller';
 import { ProjectLocationController } from './controllers/projectLocation.controller';
 import { ContractorController } from './controllers/contractor.controller';
+import { EmployeeController } from './controllers/employee.controller';
 
 import { Project, ProjectSchema } from './entities/project.entity';
 import { Piece, PieceSchema } from './entities/piece.entity';
@@ -20,6 +21,8 @@ import { Order, OrderSchema } from './entities/order.entity';
 import { Route, RouteSchema } from './entities/route.entity';
 import { ProjectLocation, ProjectLocationSchema } from './entities/projectLocation.entity';
 import { Contractor, ContractorSchema } from './entities/contractor.entity';
+import { Employee , EmployeeSchema } from './entities/employee.entity';
+import { Salary, SalarySchema } from './entities/salary.entity';
 
 import dbConfig from './modules/db-config';
 import { PersistenceModule } from './modules/persistence.module';
@@ -33,6 +36,7 @@ import { OrderService } from './services/order.service';
 import { RouteService } from './services/route.service';
 import { ProjectLocationService } from './services/projectLocation.service';
 import { ContractorService } from './services/contractor.service';
+import { EmployeeService } from './services/employee.service';
 
 @Module({
   imports: [
@@ -50,6 +54,8 @@ import { ContractorService } from './services/contractor.service';
       { name: Route.name, schema: RouteSchema},
       { name: ProjectLocation.name, schema: ProjectLocationSchema},
       { name: Contractor.name, schema: ContractorSchema},
+      { name: Employee.name, schema: EmployeeSchema},
+      { name: Salary.name, schema: SalarySchema },
     ]),
     PersistenceModule,
   ],
@@ -63,6 +69,7 @@ import { ContractorService } from './services/contractor.service';
     RouteController,
     ProjectLocationController,
     ContractorController,
+    EmployeeController,
   ],
   providers: [
     AppService,
@@ -74,6 +81,7 @@ import { ContractorService } from './services/contractor.service';
     RouteService,
     ProjectLocationService,
     ContractorService,
+    EmployeeService,
   ],
 })
 export class AppModule {}
