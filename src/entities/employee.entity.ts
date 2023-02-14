@@ -37,13 +37,13 @@ export class Employee extends Document {
   initialDate: Date;
 
   @Prop({ required: false })
-  finalDate: Date;
+  finalDate: string;
 
   @Prop({ required: true })
   contactInformation: contactInformationDto;
 
   @Prop({ required: true})
-  salary: Salary;
+  salary: Salary[];
 
 }
 

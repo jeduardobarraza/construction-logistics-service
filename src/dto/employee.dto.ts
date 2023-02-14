@@ -50,8 +50,8 @@ export class EmployeeDto {
   @IsNotEmpty()
   initialDate: Date;
 
-  @IsDateString()
-  finalDate: Date;
+  @IsString()
+  finalDate: string;
 
   @IsNotEmpty()
   @Type(()=>contactInformationDto)
