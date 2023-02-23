@@ -52,3 +52,8 @@ export const employeeMessages = {
   duplicate: 'Ya existe un empleado con esta referencia. Favor Validar.',
   saveError: 'Ha ocurrido un error al momento de guardar el empleado.',
 }
+
+export const salaryMessages = {
+  duplicate: 'Ya existe un salario con esta referencia. Favor Validar.',
+  saveError: 'Ha ocurrido un error al momento de guardar el salario.',
+}

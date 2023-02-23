@@ -12,6 +12,8 @@ import { RouteController } from './controllers/Route.controller';
 import { ProjectLocationController } from './controllers/projectLocation.controller';
 import { ContractorController } from './controllers/contractor.controller';
 import { EmployeeController } from './controllers/employee.controller';
+import { SalaryController } from './controllers/salary.controller';
+
 
 import { Project, ProjectSchema } from './entities/project.entity';
 import { Piece, PieceSchema } from './entities/piece.entity';
@@ -37,6 +39,7 @@ import { RouteService } from './services/route.service';
 import { ProjectLocationService } from './services/projectLocation.service';
 import { ContractorService } from './services/contractor.service';
 import { EmployeeService } from './services/employee.service';
+import { SalaryService } from './services/salary.service';
 
 @Module({
   imports: [
@@ -70,6 +73,7 @@ import { EmployeeService } from './services/employee.service';
     ProjectLocationController,
     ContractorController,
     EmployeeController,
+    SalaryController,
   ],
   providers: [
     AppService,
@@ -82,6 +86,7 @@ import { EmployeeService } from './services/employee.service';
     ProjectLocationService,
     ContractorService,
     EmployeeService,
+    SalaryService,
   ],
 })
 export class AppModule {}

@@ -13,7 +13,7 @@ import { type } from 'os';
 import { contactInformationDto } from './contactInformation.dto';
 import { Salary } from '../entities/salary.entity';
 
-export class EmployeeDto {
+export class SalaryDto {
   @IsString()
   @IsNotEmpty()
   position: string;
