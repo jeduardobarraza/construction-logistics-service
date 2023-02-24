@@ -14,7 +14,7 @@ import { SalaryDto } from 'src/dto/salary.dto';
 import { SalaryService } from 'src/services/salary.service';
 
 
-@Controller('salaryService')
+@Controller('salary')
 export class SalaryController {
   constructor(private readonly salaryService: SalaryService) {}
 
