@@ -20,7 +20,7 @@ export class SalaryDto {
 
   @IsDateString()
   @IsNotEmpty()
-  date: Date;
+  period: Date;
 
   @IsString()
   @IsNotEmpty()

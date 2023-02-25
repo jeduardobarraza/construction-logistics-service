@@ -11,7 +11,7 @@ export class Salary extends Document {
   position: string;
 
   @Prop({ required: true })
-  periodo: Date;
+  period: Date;
 
   @Prop({ required: true })
   salary: string;
