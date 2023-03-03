@@ -6,7 +6,7 @@ import { Salary } from './salary.entity';
 
 @Schema({ timestamps: true })
 export class Employee extends Document {
-  @Prop({ required: true, unique: true })
+  @Prop({ required: true, unique: true, index: true })
   employeeId: string;
 
   @Prop({ required: true })
@@ -21,7 +21,7 @@ export class Employee extends Document {
   @Prop({ required: true })
   dniType: string;
 
-  @Prop({ required: true })
+  @Prop({ required: true, unique: true })
   dni: string;
 
   @Prop({ required: true })
