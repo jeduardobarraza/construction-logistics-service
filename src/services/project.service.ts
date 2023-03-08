@@ -26,7 +26,7 @@ export class ProjectService {
   ping() {
     return '*********Project Service Works*************';
   }
-
+  // <summary>Create a Project</summary>
   async create(project: ProjectDto) {
     try {
       const projectDocument = {

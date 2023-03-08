@@ -26,6 +26,7 @@
         "@nestjs/core": "^9.0.0",
         "@nestjs/mongoose": "^9.2.0",
         "@nestjs/platform-express": "^9.0.0",
+        "@nestjs/swagger": "^6.2.1",
         "@vendia/serverless-express": "^4.10.1",
         "aws-lambda": "^1.0.7",
         "aws-serverless-express": "^3.4.0",
@@ -36,6 +37,7 @@
         "reflect-metadata": "^0.1.13",
         "rimraf": "^3.0.2",
         "rxjs": "^7.2.0",
+        "swagger-ui-express": "^4.6.2",
         "uuid": "^8.3.2"
     },
     "devDependencies": {
@@ -55,7 +57,7 @@
         "jest": "28.1.2",
         "plugin": "^0.3.3",
         "prettier": "^2.3.2",
-        "serverless-offline": "^9.1.6",
+        "serverless-offline": "^9.3.1",
         "serverless-plugin-optimize": "^4.2.1-rc.1",
         "serverless-plugin-typescript": "^2.1.2",
         "source-map-support": "^0.5.20",

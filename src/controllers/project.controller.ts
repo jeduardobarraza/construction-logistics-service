@@ -16,6 +16,10 @@ import { ProjectService } from 'src/services/project.service';
 export class ProjectController {
   constructor(private readonly projectService: ProjectService) {}
 
+  // <summary>
+  //  Lib for bussiness logic layer of booking Controller
+  // </summary>
+
   @Get('ping')
   ping(): string {
     return this.projectService.ping();
@@ -33,6 +37,7 @@ export class ProjectController {
     return await this.projectService.getProjects();
   }
 
+  // <summary>Create a Project</summary>
   @Get('/:projectId')
   @HttpCode(HttpStatus.OK)
   async getProjectById(@Param('projectId') projectId: string): Promise<any> {
